@@ -1,120 +1,133 @@
 import { Link } from "react-router-dom";
 
+const serviceCards = [
+  {
+    number: "01",
+    title: "Drone services",
+    text: "Aerial insight for surveillance, mapping, infrastructure inspection, mining operations and search support.",
+  },
+  {
+    number: "02",
+    title: "Technology solutions",
+    text: "Practical digital services, from web development and systems integration to cybersecurity and data analysis.",
+  },
+  {
+    number: "03",
+    title: "Equipment sourcing & hire",
+    text: "Access to the equipment your operation needs, with sourcing, hire facilitation and technical guidance.",
+  },
+];
+
+const sectors = [
+  "Mining & resources",
+  "Construction",
+  "Security & risk",
+  "Infrastructure",
+  "Government",
+  "Agriculture",
+  "Energy & utilities",
+  "Technology",
+];
+
 export default function Home() {
   return (
-    <section className="page-section">
-      <div className="hero">
-        <div className="hero-bg"></div>
-        <div className="hero-bar"></div>
-        <div className="hero-content">
-          <div className="hero-eye">Ingwe Technologies (Pty) Ltd — South Africa</div>
-          <div className="hero-h1">INGWE</div>
-          <div className="hero-h2">TECHNOLOGIES</div>
-          <div className="hero-tag">Stealth &nbsp;·&nbsp; Strength &nbsp;·&nbsp; Agility</div>
-          <div className="hero-rule"></div>
-          <p className="hero-desc">
-            A multi-disciplinary technology solutions company delivering precision drone
-            services, tech solutions, and equipment sourcing across Southern Africa.
-          </p>
-          <Link className="btn btn-red" to="/services">Our Services</Link>
-          <Link className="btn btn-outline" to="/contact">Get In Touch</Link>
+    <>
+      <section className="hero">
+        <div className="hero-art" aria-hidden="true">
+          <div className="hero-orbit orbit-one" />
+          <div className="hero-orbit orbit-two" />
+          <div className="hero-orbit orbit-three" />
+          <div className="hero-coordinate">SOUTHERN AFRICA<br />26°12′S · 28°02′E</div>
+          <div className="hero-art-mark">I</div>
         </div>
-      </div>
-
-      <div className="stats">
-        <div className="stats-inner">
-          <div className="stat"><div className="stat-n">3</div><div className="stat-l">Core Service Pillars</div></div>
-          <div className="stat"><div className="stat-n">8+</div><div className="stat-l">Industries Served</div></div>
-          <div className="stat"><div className="stat-n">2025</div><div className="stat-l">Founded</div></div>
-        </div>
-      </div>
-
-      <div className="svc-preview">
-        <div className="container">
-          <div className="svc-preview-head">
-            <div className="tag">What We Do</div>
-            <h2 className="section-title">Three Pillars. One Standard.</h2>
-            <div className="red-rule"></div>
-            <p className="section-sub" style={{ margin: "0 auto" }}>
-              Every service we offer is built around precision delivery, technical expertise,
-              and measurable results.
+        <div className="container hero-inner">
+          <div className="hero-copy">
+            <div className="eyebrow eyebrow-light"><span /> Ingwe Technologies (Pty) Ltd · South Africa</div>
+            <h1>Technology that moves<br /><em>business forward.</em></h1>
+            <p className="hero-lede">
+              Precision drone operations, practical technology and equipment sourcing for the people building Southern Africa.
             </p>
+            <div className="hero-actions">
+              <Link className="button button-red" to="/services">Explore our services <span aria-hidden="true">↗</span></Link>
+              <Link className="button button-quiet" to="/contact">Talk to our team</Link>
+            </div>
+            <div className="hero-note">Stealth <span>·</span> Strength <span>·</span> Agility</div>
           </div>
-          <div className="svc-grid">
-            <Link className="svc-card" to="/services">
-              <div className="svc-n">01</div>
-              <div className="svc-t">Drone Services</div>
-              <div className="svc-d">
-                Security surveillance, aerial mapping, blast monitoring, pipeline inspection
-                and more — across industrial, commercial, and civil sectors.
-              </div>
-              <div className="svc-a">Learn More →</div>
-            </Link>
-            <Link className="svc-card" to="/services">
-              <div className="svc-n">02</div>
-              <div className="svc-t">Tech Solutions</div>
-              <div className="svc-d">
-                Web development, cybersecurity, systems integration, software engineering,
-                and data analysis — tailored to your operational needs.
-              </div>
-              <div className="svc-a">Learn More →</div>
-            </Link>
-            <Link className="svc-card" to="/services">
-              <div className="svc-n">03</div>
-              <div className="svc-t">Equipment Sourcing &amp; Hire</div>
-              <div className="svc-d">
-                From pumps to excavators and 777 dump trucks — we source, hire, inspect,
-                and advise on heavy equipment at any scale.
-              </div>
-              <div className="svc-a">Learn More →</div>
-            </Link>
-          </div>
+          <div className="hero-index" aria-hidden="true"><span>01</span><span className="index-line" /><span>03</span></div>
         </div>
-      </div>
+        <div className="hero-bottom"><span>Independent thinking. Reliable delivery.</span><span>Scroll to explore ↓</span></div>
+      </section>
 
-      <div className="why">
+      <section className="proof-strip" aria-label="Company overview">
+        <div className="container proof-grid">
+          <div><strong>03</strong><span>service pillars</span></div>
+          <div><strong>08+</strong><span>industries served</span></div>
+          <div><strong>2025</strong><span>founded in South Africa</span></div>
+          <p>One capable partner for complex, real-world work.</p>
+        </div>
+      </section>
+
+      <section className="section section-services">
         <div className="container">
-          <div className="why-grid">
+          <div className="section-heading split-heading">
             <div>
-              <div className="tag">Why Choose Us</div>
-              <h2 className="section-title">Built for Corporate and Industrial Clients</h2>
-              <div className="red-rule"></div>
-              <p className="section-sub">
-                Ingwe Technologies combines proven technical expertise with a client-first
-                delivery model — ensuring every engagement is precise, reliable, and
-                tailored to your exact specifications.
-              </p>
-              <ul className="why-points">
-                <li><div className="why-ico"><svg viewBox="0 0 12 12"><polyline points="1,6 4.5,9.5 11,2" /></svg></div><span>Tailored solutions for every client — no one-size-fits-all approach</span></li>
-                <li><div className="why-ico"><svg viewBox="0 0 12 12"><polyline points="1,6 4.5,9.5 11,2" /></svg></div><span>Proven expertise across drone, tech, and heavy equipment sectors</span></li>
-                <li><div className="why-ico"><svg viewBox="0 0 12 12"><polyline points="1,6 4.5,9.5 11,2" /></svg></div><span>Structured reporting and documentation for tender requirements</span></li>
-                <li><div className="why-ico"><svg viewBox="0 0 12 12"><polyline points="1,6 4.5,9.5 11,2" /></svg></div><span>Agile response to operational demands and time-sensitive projects</span></li>
-              </ul>
+              <div className="eyebrow"><span /> What we do</div>
+              <h2>Three disciplines.<br /><em>One standard.</em></h2>
             </div>
-            <div className="why-vis">
-              <div className="why-vis-q">"Stealth. Strength. Agility. — in every project we deliver."</div>
-              <div className="ind-list">
-                <div className="ind-pill">Mining &amp; Resources</div>
-                <div className="ind-pill">Construction</div>
-                <div className="ind-pill">Security &amp; Risk</div>
-                <div className="ind-pill">Infrastructure</div>
-                <div className="ind-pill">Government</div>
-                <div className="ind-pill">Agriculture</div>
-                <div className="ind-pill">Energy &amp; Utilities</div>
-                <div className="ind-pill">Technology</div>
-              </div>
+            <div className="heading-aside">
+              <p>We bring technical skill, clear communication and accountable delivery to every engagement.</p>
+              <Link className="text-link" to="/services">View all services <span aria-hidden="true">↗</span></Link>
             </div>
           </div>
+          <div className="service-cards">
+            {serviceCards.map((service) => (
+              <Link className="service-card" to="/services" key={service.number}>
+                <div className="card-top"><span>{service.number}</span><span className="card-arrow" aria-hidden="true">↗</span></div>
+                <h3>{service.title}</h3>
+                <p>{service.text}</p>
+                <div className="card-rule" />
+                <span className="card-more">Discover the service <span aria-hidden="true">→</span></span>
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="cta">
-        <div className="container">
-          <h2>Ready to work with us?</h2>
-          <p>Contact Njabulo Mbatha and the Ingwe Technologies team today.</p>
-          <Link className="btn btn-white" to="/contact">Get In Touch</Link>
+      <section className="section section-approach">
+        <div className="container approach-grid">
+          <div className="approach-heading">
+            <div className="eyebrow eyebrow-light"><span /> Why Ingwe</div>
+            <h2>Built around<br />your <em>operation.</em></h2>
+            <p>Good work starts by understanding the challenge. We shape each engagement to fit the client, the site and the outcome that matters.</p>
+            <Link className="button button-outline-light" to="/about">Get to know Ingwe <span aria-hidden="true">↗</span></Link>
+          </div>
+          <div className="approach-points">
+            <article><span>01</span><div><h3>Purposeful by design</h3><p>Recommendations are tailored to the brief, with a clear line from scope to result.</p></div></article>
+            <article><span>02</span><div><h3>Technical and practical</h3><p>We pair specialist capability with a grounded understanding of operational realities.</p></div></article>
+            <article><span>03</span><div><h3>Accountable delivery</h3><p>Professional execution, useful reporting and open communication throughout the work.</p></div></article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="section sectors-section">
+        <div className="container sectors-grid">
+          <div>
+            <div className="eyebrow"><span /> Where we work</div>
+            <h2>Made for demanding<br /><em>environments.</em></h2>
+            <p className="section-intro">Our services support teams across industrial, commercial and public-sector settings.</p>
+          </div>
+          <div className="sector-list">
+            {sectors.map((sector, index) => <div key={sector}><span>0{index + 1}</span>{sector}</div>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="contact-band">
+        <div className="container contact-band-inner">
+          <div><div className="eyebrow eyebrow-light"><span /> Start a conversation</div><h2>Have a challenge<br />in mind?</h2></div>
+          <div className="contact-band-action"><p>Tell us what you need. We’ll work with you to shape the right next step.</p><Link className="button button-white" to="/contact">Contact Ingwe <span aria-hidden="true">↗</span></Link></div>
+        </div>
+      </section>
+    </>
   );
 }
