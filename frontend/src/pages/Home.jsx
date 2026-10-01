@@ -29,6 +29,12 @@ const sectors = [
   "Technology",
 ];
 
+const clientGroups = [
+  { number: "01", name: "Technical", companies: ["Exxaro", "Eskom", "Thungela"] },
+  { number: "02", name: "Production", companies: ["Newzroom Africa"] },
+  { number: "03", name: "Media", companies: ["Showmax", "SABC"] },
+];
+
 export default function Home() {
   return (
     <>
@@ -88,6 +94,30 @@ export default function Home() {
                 <div className="card-rule" />
                 <span className="card-more">Discover the service <span aria-hidden="true">→</span></span>
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section clients-section" aria-labelledby="clients-heading">
+        <div className="container">
+          <div className="section-heading split-heading">
+            <div>
+              <div className="eyebrow"><span /> Selected experience</div>
+              <h2 id="clients-heading">Companies we’ve<br /><em>worked with.</em></h2>
+            </div>
+            <div className="heading-aside">
+              <p>Experience across technical, production and media environments.</p>
+            </div>
+          </div>
+          <div className="client-groups">
+            {clientGroups.map((group) => (
+              <article className="client-group" key={group.name}>
+                <div className="client-group-heading"><span>{group.number}</span><h3>{group.name}</h3></div>
+                <ul aria-label={`${group.name} companies`}>
+                  {group.companies.map((company) => <li key={company}>{company}</li>)}
+                </ul>
+              </article>
             ))}
           </div>
         </div>
