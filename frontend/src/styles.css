@@ -110,6 +110,14 @@ h1, h2, h3 { font-family: 'Manrope', sans-serif; }
 .card-rule { width: 32px; height: 2px; margin-top: auto; background: var(--red); }
 .card-more { display: flex; justify-content: space-between; gap: 12px; margin-top: 18px; color: #404b4b; font-size: 11px; font-weight: 800; letter-spacing: .03em; }
 .card-more span { color: var(--red); font-size: 16px; }
+.clients-section { background: #eef0ed; }
+.client-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.client-group { min-height: 208px; padding: 24px 25px 22px; border: 1px solid #d8ddda; background: rgba(255,255,255,.78); }
+.client-group-heading { display: flex; align-items: center; gap: 12px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.client-group-heading > span { color: var(--red); font-family: monospace; font-size: 10px; font-weight: 700; }
+.client-group-heading h3 { margin: 0; color: var(--ink); font-size: 16px; letter-spacing: -.02em; }
+.client-group ul { display: flex; flex-wrap: wrap; gap: 9px; margin: 18px 0 0; padding: 0; list-style: none; }
+.client-group li { display: grid; min-height: 43px; place-items: center; padding: 7px 12px; border: 1px solid #e1e5e2; color: #293232; background: #fff; font-family: 'Manrope', sans-serif; font-size: 13px; font-weight: 800; letter-spacing: -.025em; }
 .section-approach { color: var(--white); background: var(--ink); }
 .approach-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 110px; }
 .approach-heading h2 { color: var(--white); }
@@ -317,6 +325,8 @@ h1, h2, h3 { font-family: 'Manrope', sans-serif; }
   .gallery-card-copy h2 { font-size: 15px; }
   .service-card { min-height: 245px; padding: 23px; }
   .service-card h3 { margin-top: 25px; }
+  .client-groups { grid-template-columns: 1fr; gap: 10px; }
+  .client-group { min-height: auto; padding: 20px; }
   .approach-grid, .sectors-grid, .about-grid, .contact-layout { grid-template-columns: 1fr; gap: 40px; }
   .approach-points article { grid-template-columns: 34px 1fr; gap: 13px; }
   .sector-list { grid-template-columns: 1fr 1fr; }
