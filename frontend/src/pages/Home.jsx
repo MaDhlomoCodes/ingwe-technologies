@@ -30,9 +30,9 @@ const sectors = [
 ];
 
 const clientGroups = [
-  { number: "01", name: "Technical", companies: ["Exxaro", "Eskom", "Thungela"] },
-  { number: "02", name: "Production", companies: ["Newzroom Africa"] },
-  { number: "03", name: "Media", companies: ["Showmax", "SABC"] },
+  { number: "01", name: "Technical", companies: [{ name: "Exxaro", logo: "exxaro.svg" }, { name: "Eskom", logo: "eskom.png" }, { name: "Thungela", logo: "thungela.png" }] },
+  { number: "02", name: "Production", companies: [{ name: "Newzroom Afrika", logo: "newzroom-afrika.svg" }] },
+  { number: "03", name: "Media", companies: [{ name: "Showmax", logo: "showmax.svg" }, { name: "SABC", logo: "sabc.svg" }] },
 ];
 
 export default function Home() {
@@ -115,7 +115,11 @@ export default function Home() {
               <article className="client-group" key={group.name}>
                 <div className="client-group-heading"><span>{group.number}</span><h3>{group.name}</h3></div>
                 <ul aria-label={`${group.name} companies`}>
-                  {group.companies.map((company) => <li key={company}>{company}</li>)}
+                  {group.companies.map((company) => (
+                    <li key={company.name}>
+                      <img src={`${import.meta.env.BASE_URL}clients/logos/${company.logo}`} alt={company.name} loading="lazy" decoding="async" />
+                    </li>
+                  ))}
                 </ul>
               </article>
             ))}

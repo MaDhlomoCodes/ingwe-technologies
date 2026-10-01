@@ -117,7 +117,8 @@ h1, h2, h3 { font-family: 'Manrope', sans-serif; }
 .client-group-heading > span { color: var(--red); font-family: monospace; font-size: 10px; font-weight: 700; }
 .client-group-heading h3 { margin: 0; color: var(--ink); font-size: 16px; letter-spacing: -.02em; }
 .client-group ul { display: flex; flex-wrap: wrap; gap: 9px; margin: 18px 0 0; padding: 0; list-style: none; }
-.client-group li { display: grid; min-height: 43px; place-items: center; padding: 7px 12px; border: 1px solid #e1e5e2; color: #293232; background: #fff; font-family: 'Manrope', sans-serif; font-size: 13px; font-weight: 800; letter-spacing: -.025em; }
+.client-group li { display: grid; min-width: 112px; min-height: 68px; flex: 1 1 112px; place-items: center; padding: 9px 12px; border: 1px solid #e1e5e2; background: #fff; }
+.client-group li img { display: block; width: auto; max-width: min(100%, 165px); height: 48px; object-fit: contain; }
 .section-approach { color: var(--white); background: var(--ink); }
 .approach-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 110px; }
 .approach-heading h2 { color: var(--white); }
