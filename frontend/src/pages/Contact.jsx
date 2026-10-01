@@ -14,13 +14,9 @@ export default function Contact() {
     setStatus({ type: "sending", message: "Sending your enquiry…" });
 
     try {
-      const result = await submitContact(payload);
-      if (result.delivery === "email") {
-        setStatus({ type: "email", message: "Your email app is opening with your enquiry. Send the message there to complete your request." });
-      } else {
-        form.reset();
-        setStatus({ type: "success", message: "Thank you. Your enquiry has been received." });
-      }
+      await submitContact(payload);
+      form.reset();
+      setStatus({ type: "success", message: "Thank you. Your enquiry has been received." });
     } catch (error) {
       setStatus({ type: "error", message: error.message || "We couldn’t send that just now. Please contact us by email or phone." });
     }
@@ -55,13 +51,16 @@ export default function Contact() {
             <div className="eyebrow"><span /> Send an enquiry</div>
             <h2>Tell us about your project.</h2>
             <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="form-row">
-                <label>Full name<input name="name" autoComplete="name" placeholder="Your name" required /></label>
-                <label>Company<input name="company" autoComplete="organization" placeholder="Company (optional)" /></label>
+              <div className="form-honeypot" aria-hidden="true">
+                <label>Leave this field empty<input name="website" type="text" tabIndex={-1} autoComplete="off" /></label>
               </div>
               <div className="form-row">
-                <label>Email address<input name="email" type="email" autoComplete="email" placeholder="you@company.com" required /></label>
-                <label>Phone number<input name="phone" type="tel" autoComplete="tel" placeholder="Your number (optional)" /></label>
+                <label>Full name<input name="name" autoComplete="name" maxLength={120} placeholder="Your name" required /></label>
+                <label>Company<input name="company" autoComplete="organization" maxLength={160} placeholder="Company (optional)" /></label>
+              </div>
+              <div className="form-row">
+                <label>Email address<input name="email" type="email" autoComplete="email" maxLength={254} placeholder="you@company.com" required /></label>
+                <label>Phone number<input name="phone" type="tel" autoComplete="tel" maxLength={50} placeholder="Your number (optional)" /></label>
               </div>
               <label>Service of interest
                 <select name="service" defaultValue="">
@@ -73,10 +72,9 @@ export default function Contact() {
                   <option>Not sure yet</option>
                 </select>
               </label>
-              <label>How can we help?<textarea name="message" rows="5" placeholder="A few details about your requirements will help us prepare." /></label>
+              <label>How can we help?<textarea name="message" rows="5" maxLength={5000} placeholder="A few details about your requirements will help us prepare." /></label>
               <button className="button button-red" type="submit" disabled={status.type === "sending"}>Send enquiry <span aria-hidden="true">↗</span></button>
               {status.message && <p className={`form-status ${status.type}`} role="status">{status.message}</p>}
-              {!import.meta.env.VITE_API_URL && <p className="form-note">The online form will use your email app until API hosting is configured. Nothing is submitted without your confirmation.</p>}
             </form>
           </div>
         </div>
