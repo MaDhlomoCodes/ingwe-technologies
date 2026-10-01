@@ -13,14 +13,42 @@ export default function App() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    const titles = {
-      "/": "Ingwe Technologies — Stealth. Strength. Agility.",
-      "/about": "About Ingwe Technologies",
-      "/services": "Services — Ingwe Technologies",
-      "/contact": "Contact Ingwe Technologies",
-      "/gallery": "Gallery — Ingwe Technologies",
+    const pages = {
+      "/": {
+        title: "Ingwe Technologies — Stealth. Strength. Agility.",
+        description: "Ingwe Technologies delivers drone services, practical technology solutions, and equipment sourcing for corporate and industrial clients across Southern Africa.",
+      },
+      "/about": {
+        title: "About Ingwe Technologies",
+        description: "Learn about Ingwe Technologies, a South African technology solutions company serving corporate and industrial clients across Southern Africa.",
+      },
+      "/services": {
+        title: "Services — Ingwe Technologies",
+        description: "Explore Ingwe Technologies services: drone operations, practical digital technology solutions, and equipment sourcing and hire.",
+      },
+      "/contact": {
+        title: "Contact Ingwe Technologies",
+        description: "Contact Ingwe Technologies in Meyerton, Gauteng, to discuss drone operations, technology services, or equipment sourcing.",
+      },
+      "/gallery": {
+        title: "Gallery — Ingwe Technologies",
+        description: "View Ingwe Technologies field photography and video from drone operations, mining, solar, and infrastructure projects.",
+      },
     };
-    document.title = titles[location.pathname] || titles["/"];
+    const pagePath = location.pathname === "/" ? "/" : location.pathname.replace(/\/+$/, "") || "/";
+    const page = pages[pagePath] || pages["/"];
+    const canonicalPath = pages[pagePath] ? pagePath : "/";
+
+    document.title = page.title;
+    document.querySelector('meta[name="description"]').setAttribute("content", page.description);
+
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = `https://ingwetech.co.za${canonicalPath}`;
   }, [location.pathname]);
 
   return (
