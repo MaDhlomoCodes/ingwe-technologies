@@ -122,6 +122,35 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section field-gallery-preview">
+        <div className="container">
+          <div className="section-heading split-heading">
+            <div>
+              <div className="eyebrow"><span /> Ingwe in the field</div>
+              <h2>Real work.<br /><em>Real environments.</em></h2>
+            </div>
+            <div className="heading-aside">
+              <p>From aerial surveys to industrial and energy sites, see a little of the work behind our services.</p>
+              <Link className="text-link" to="/gallery">Explore the gallery <span aria-hidden="true">↗</span></Link>
+            </div>
+          </div>
+          <div className="home-gallery-grid">
+            <Link className="home-gallery-item home-gallery-wide" to="/gallery">
+              <img src={`${import.meta.env.BASE_URL}gallery/photos/solar-farm-aerial.jpg`} alt="Aerial view across a solar farm in South Africa" loading="lazy" />
+              <span>Solar & infrastructure <b>↗</b></span>
+            </Link>
+            <Link className="home-gallery-item" to="/gallery">
+              <img src={`${import.meta.env.BASE_URL}gallery/photos/drone-on-site.jpg`} alt="Drone prepared for a site operation" loading="lazy" />
+              <span>Drone operations <b>↗</b></span>
+            </Link>
+            <Link className="home-gallery-item" to="/gallery">
+              <img src={`${import.meta.env.BASE_URL}gallery/photos/earthmoving-equipment.jpg`} alt="Earthmoving equipment at an industrial site" loading="lazy" />
+              <span>Mining & industry <b>↗</b></span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="contact-band">
         <div className="container contact-band-inner">
           <div><div className="eyebrow eyebrow-light"><span /> Start a conversation</div><h2>Have a challenge<br />in mind?</h2></div>

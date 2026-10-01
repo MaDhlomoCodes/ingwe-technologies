@@ -4,7 +4,7 @@ This repository now contains the fullstack Ingwe Technologies site at its root. 
 
 ## Project structure
 
-- `frontend/` — React application built with Vite and deployed to GitHub Pages.
+- `frontend/` — React application built with Vite and deployed to GitHub Pages, including the project gallery and its media in `frontend/public/gallery/`.
 - `backend-node/` — Express API for contact submissions and gallery data.
 - `backend-python/` — Flask service for email notifications.
 - `legacy/index.html` — archived copy of the former static site.
