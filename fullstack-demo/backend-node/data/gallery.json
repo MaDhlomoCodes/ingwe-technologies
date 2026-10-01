@@ -1,0 +1,11 @@
+[
+  { "id": 1, "category": "drone", "caption": "Aerial mapping survey", "image": "drone-01.jpg" },
+  { "id": 2, "category": "drone", "caption": "Pipeline inspection", "image": "drone-02.jpg" },
+  { "id": 3, "category": "drone", "caption": "Mining pit inspection", "image": "drone-03.jpg" },
+  { "id": 4, "category": "tech", "caption": "Web platform build", "image": "tech-01.jpg" },
+  { "id": 5, "category": "tech", "caption": "Systems integration", "image": "tech-02.jpg" },
+  { "id": 6, "category": "equipment", "caption": "Heavy equipment inspection", "image": "equip-01.jpg" },
+  { "id": 7, "category": "equipment", "caption": "Excavator on site", "image": "equip-02.jpg" },
+  { "id": 8, "category": "drone", "caption": "Construction progress capture", "image": "drone-04.jpg" },
+  { "id": 9, "category": "tech", "caption": "On-site tech deployment", "image": "tech-03.jpg" }
+]
