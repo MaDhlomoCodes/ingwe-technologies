@@ -3,9 +3,6 @@ import { NavLink } from "react-router-dom";
 
 const LINKS = [
   { to: "/", label: "Home", end: true },
-  { to: "/about", label: "About" },
-  { to: "/services", label: "Services" },
-  { to: "/gallery", label: "Gallery" },
 ];
 
 export default function Nav() {
@@ -25,11 +22,6 @@ export default function Nav() {
               </NavLink>
             </li>
           ))}
-          <li>
-            <NavLink to="/contact" className="nav-cta">
-              Get In Touch
-            </NavLink>
-          </li>
         </ul>
         <button className="hamburger" onClick={() => setOpen((o) => !o)}>
           <span></span><span></span><span></span>
@@ -41,7 +33,6 @@ export default function Nav() {
             {link.label}
           </NavLink>
         ))}
-        <NavLink to="/contact" onClick={() => setOpen(false)}>Get In Touch</NavLink>
       </div>
     </nav>
   );
